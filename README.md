@@ -32,4 +32,8 @@ This will create all the folders and _backbone_ of the crawler. Then you move to
 scrapy genspider periodico periodicooficial.jalisco.gob.mx
 ```
 
-which creates a spider for the crawler. This can be found in the `spiders` folder. Inside `periodico.py` is the information relevant to the crawler. We modified the `start_urls` parameter to describe which is the first URL the crawler must _crawl_.
+which creates a spider for the crawler. This can be found in the `spiders` folder. Inside `periodico.py` is the information relevant to the crawler. We modified the `start_urls` parameter to describe which is the first URL the crawler must _crawl_. In rules we set `.pager-next` as the CSS identificator for navigating the pages.
+
+`parse_item` is the function that parses the content of the page viewed. For now, this only displays a message.
+
+The parent class of the spider is `CrawlSpider` instead of `scrapy.Spider` as it makes easier to crawl many pages.
